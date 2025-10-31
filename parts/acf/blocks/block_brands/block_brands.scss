@@ -1,0 +1,80 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.block_brands {
+    /*.swiper {
+        &-button-prev,
+        &-button-next {
+            width: 40px;
+            height: 40px;
+            border: 1px solid variables.$dark;
+            border-radius: 50rem;
+            padding: 10px;
+            transition : background-color 0.3s ease, border 0.3s ease;
+
+            path {
+                fill: variables.$dark;
+                transition : fill 0.3s ease;
+            }
+
+            &:hover {
+                background-color: variables.$orange;
+                border: 1px solid variables.$orange;
+                transition : background-color 0.3s ease, border 0.3s ease;
+
+                path {
+                    fill: variables.$white;
+                    transition : fill 0.3s ease;
+                }
+            }
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }*/
+
+    .brands {
+        &_subtitle,
+        &_title {
+            text-align: center;
+        }
+
+        &_title {
+            margin-bottom: 50px;
+        }
+
+        &_slider {
+            overflow: visible;
+            margin-left: 10%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        &_img {
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            aspect-ratio: 1/1;
+        }
+
+        &_wrapper_img {
+            background-color: variables.$lightblue;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            aspect-ratio: 1/1;
+
+            &:nth-child(odd) {
+                transform: rotate(5deg);
+            }
+
+            &:nth-child(even) {
+                transform: rotate(-5deg);
+            }
+        }
+    }
+}

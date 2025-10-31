@@ -1,0 +1,346 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer {
+    background-color: variables.$lightblue;
+
+    .container {
+        background-color: variables.$white;
+        border-radius: variables.$border_radius_element;
+        padding : 20px 10px 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            padding : 50px 80px 0 80px;
+        }
+    }
+    
+    &_top {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        &_left {
+            &_logo_link {
+                max-width: 220px;
+                display: block;
+                overflow: hidden;
+                max-height: 100px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            ul {
+                padding-top: 30px;
+                padding-left: 0;
+                list-style: none;
+            }
+
+            li {
+                padding-bottom: 10px;
+            }
+
+            a {
+                text-decoration: underline;
+                color: variables.$dark;
+                transition: color .3s ease, text-decoration .3s ease;
+
+                &:hover {
+                    color: variables.$orange;
+                    transition: color .3s ease, text-decoration .3s ease;
+                    text-decoration: none;
+                }
+            }
+        }
+        
+        &_right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+ 
+            @include tablet {
+                gap: 50px;
+                flex-direction: row;
+                margin-top: 0;
+            }
+
+            .menu_burger_nav_wrapper,
+            .social {
+                ul {
+                    padding-left: 0;
+                    list-style: none;
+                }
+            }
+
+            .menu_burger_nav_wrapper {
+                @include tablet {
+                    text-align: right;
+                }
+
+                li {
+                    padding: 0;
+                    background-color: transparent;
+                }
+
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: variables.$dark;
+                    transition: color .3s ease;
+                    font-size: 1.2rem;
+                    @include font_title;
+
+                    &:hover {
+                        color: variables.$orange;
+                        transition: color .3s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    &_bottom {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 50px 0 20px 0;
+        gap: 40px;
+
+        @include large {
+            gap: 10px;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+        }
+
+
+        a {
+            color: variables.$dark;
+            font-weight: 300;
+            -webkit-transition: 0.2s ease-in-out;
+            -o-transition: 0.2s ease-in-out;
+            transition: 0.2s ease-in-out;
+            text-decoration: none;
+            transition: color .3s ease;
+            
+            &:hover {
+                color: variables.$orange;
+                transition: color .3s ease;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+            }
+        }
+
+        &_right {
+            display: flex;
+            align-items: baseline;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+            }
+
+            .cky-banner-element {
+                background: transparent;
+                border: 0;
+                padding: 0;
+                font-weight: 300;
+
+                &:hover {
+                    cursor: pointer;
+                    color: variables.$blue;
+                }
+            }
+
+            .cky-banner-element,
+            .menu_burger_nav_wrapper li {
+                padding-right: 20px;
+                position: relative;
+                color: variables.$dark;
+                font-size: variables.$text_small;
+
+                @include tablet {
+                    &::after {
+                        position: absolute;
+                        content: "/";
+                        font-size: 20px;
+                        top: -5px;
+                        right: 7px;
+                        color: variables.$dark;
+                    }
+                }
+            }
+        }
+    }
+
+    &_brand {
+        width: 100%;
+        height: auto;
+        margin-bottom: -5px;
+        opacity: 0.4;
+
+        &_belgium path {
+            fill: variables.$yellow;
+        }
+
+        &_lux path {
+            fill: variables.$darkblue;
+        }
+    }
+
+    &_designed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-size: variables.$text_small;
+            color: variables.$dark;
+        }
+
+        img {
+            width: 12px;
+            margin-left: 5px;
+        }
+
+        .logo_brillant {
+            &_wrapper {
+                display: inline-flex;
+                align-items: flex-end;
+                margin-left: 5px;
+                position: relative;  
+            }
+
+            &_svg {
+                position: relative;
+                z-index: 1;
+
+                path {
+                    opacity: 1;
+                    transition: .5s ease;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    & path:not(.favicon_b) {
+                        opacity: 0;
+                        transition: .5s ease;
+                    }
+
+                    .favicon_b {
+                        transform: scale(1.5);
+                        transition: transform .5s ease;
+                    }
+
+                    & + .logo_brillant_font {
+                        width: 80px;
+                        transition: .5s ease;
+
+                        path {
+                            opacity: 0; 
+                            animation: fadeIn 1s forwards;   
+                            transition: width .5s ease;
+                        }
+                        
+                        .path1 {
+                            animation-delay: 0s;  
+                        }
+
+                        .path2 {
+                            animation-delay: 0.1s;
+                        }
+
+                        .path3 {
+                            animation-delay: 0.2s;
+                        }
+
+                        .path4 {
+                            animation-delay: 0.3s;
+                        }
+
+                        .path5 {
+                            animation-delay: 0.4s;
+                        }
+
+                        .path6 {
+                            animation-delay: 0.5s;
+                        }
+
+                        .path7 {
+                            animation-delay: 0.6s;
+                        }
+
+                        .path8 {
+                            animation-delay: 0.7s;
+                        }
+
+                        .path9 {
+                            animation-delay: 0.8s;
+                        }
+                    }
+                }
+
+                .favicon_b {
+                    transform: scale(1);
+                    transform-origin: center;
+                    transition: transform .5s ease;
+                }
+
+                & + .logo_brillant_font {
+                    overflow: hidden;
+                    transform: scale(0.7);
+                    width: 0;
+                    margin-bottom: 8px;
+                    transition: width .5s ease;
+                    position: absolute;
+                    z-index: 0;
+                    left: -2px;
+                    bottom: -18px;
+                }
+            }
+        }
+    }  
+}

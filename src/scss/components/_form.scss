@@ -1,0 +1,210 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as *;
+
+.gform {
+    &_heading {
+        display: none!important;
+    }
+}
+
+form {
+    .gform {
+        &_footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &_fields {
+            row-gap : 25px!important;
+
+            @include desktop {
+                column-gap : 25px!important;
+            }
+        }
+    }
+
+    .gfield {
+        position: relative;
+
+        &_consent_label {
+            font-size: variables.$text_small!important;
+        }
+        
+        &_required_text {
+            display: none!important;
+        }
+    }
+
+    input:not([type=radio]),
+    textarea,
+    select {
+        padding: 20px!important;
+        border-radius: variables.$border_radius_element!important;
+        color: variables.$dark!important;
+        border: none!important;
+        -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.15)!important;
+        box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.15)!important;
+        transition: box-shadow .3s ease;;
+
+        &:focus {
+            -webkit-box-shadow: 0px 0px 7px 1px rgba(236, 102, 63, 0.5)!important;
+            box-shadow: 0px 0px 7px 1px rgba(236, 102, 63, 0.5)!important;
+            transition: box-shadow .3s ease;;
+        }
+    }
+
+    input {
+        &[type=submit],
+        &[type=button] {
+            background-color: variables.$orange!important;
+            border-radius: 50rem!important;
+            text-transform: uppercase!important;
+            border: 0!important;
+            font-family: 'Anton', sans-serif!important;
+            letter-spacing: 1.5px!important;
+            padding: 15px 40px!important;
+            color: variables.$white!important;
+
+            &:hover {
+                background-color: variables.$dark!important;
+                transition: background-color .3s ease!important;
+                cursor: pointer!important
+            }   
+        }
+
+        &[type=checkbox] {
+            width: 20px!important;
+            height: 20px!important;
+            padding: 0!important;
+            border-radius: 5px!important;
+        }
+    }
+
+    &.form {
+        &_contact {
+             .gfield {
+                &_label {
+                    position: absolute;
+                    top: 10px;
+                    left: 20px;
+                    font-weight: 400!important;
+                    color : variables.$grey!important;
+                }
+            }
+        }
+
+        &_profilage {
+            display: flex;
+            flex-direction: column;
+            padding: 80px 40px;
+            border-radius: 50px;
+            background: variables.$white;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+        
+            input {
+                // Button
+                &[type=button][data-submission-type=previous],
+                &[type=submit][data-submission-type=previous] {
+                    background-color: variables.$dark!important;
+
+                    &:hover {
+                        background-color: variables.$grey!important;
+                    }
+                }
+                // Label radio
+                &[type=radio] {
+                    text-indent: unset;
+                    z-index: -1;
+                    position: absolute;
+                    opacity: 1;
+                    border: 0;
+                    background: transparent;
+
+                    &:checked + label {
+                        border: 1px solid variables.$orange;
+                        color: variables.$orange;
+                        transition: border 0.3s ease, color 0.3s ease;
+                    }
+
+                    & + label {
+                        padding: 20px;
+                        border-radius: 15px;
+                        margin-left: 0;
+                        width: fit-content;
+                        border: 1px solid variables.$grey;
+                        z-index: 1;
+                        transition: border 0.3s ease, color 0.3s ease;
+
+                        &:hover {
+                            cursor: pointer;
+                            border: 1px solid variables.$yellow;
+                            color: variables.$yellow;
+                            transition: border 0.3s ease, color 0.3s ease;
+                        }
+                    }
+                }
+            }      
+            
+            legend {
+                text-align: center;
+            }
+
+            .gform-page-footer,
+            .gfield_radio {
+                flex-direction: row!important;
+                flex-wrap: wrap;
+                display: flex!important;
+                justify-content: center;
+            }
+
+            // Pagination
+            .gf_page_steps {
+                justify-content: center;
+                order: 2;
+                margin-top: 30px;
+                margin-bottom: 0;
+
+                .gf_step {
+                    width: 31px;
+
+                    &:not(:last-child) .gf_step_number::before {
+                            content: "";
+                            height: 1px;
+                            width: 100%;
+                            right: -100%;
+                            top: 15px;
+                            position: absolute;
+                            background: variables.$dark;;
+                    }
+
+                    &.gf_step_completed .gf_step_number::after {
+                        background-color: variables.$orange;
+                        border: 1px solid variables.$orange;
+                    }
+
+                    .gf_step_number {
+                        border: 1px solid variables.$dark;
+                        background-color: variables.$white;
+                        color: variables.$dark;
+                        position: relative;
+                    }
+
+                    &_active .gf_step_number {
+                        border: 1px solid variables.$orange;
+                        color: variables.$orange;
+                    }
+                }
+            }
+
+            .gform_body {
+                .gform_page:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                
+            }
+        }
+    }
+}

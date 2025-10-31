@@ -1,0 +1,4 @@
+dist/videos
+src/videos
+node_modules
+.DS_Store

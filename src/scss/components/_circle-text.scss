@@ -1,0 +1,40 @@
+@use "../base/variables" as variables;
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+
+.circle_text_wrapper {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    animation: spin 20s linear infinite;
+    transform-origin: center;
+    font-size: 8.7px;
+
+    &_yellow svg {
+        fill: variables.$yellow;
+
+        circle {
+            stroke: variables.$yellow;
+        }
+    }
+
+    &_orange svg {
+        fill: variables.$orange;
+
+        circle {
+            stroke: variables.$orange;
+        }
+    }
+
+    &_blue svg {
+        fill: variables.$blue;
+
+        circle {
+            stroke: variables.$blue;
+        }
+    }
+}
