@@ -26,10 +26,14 @@
     $video_autoplay         = get_sub_field('block_text_media_media_video_autoplay');
     $video_loop             = get_sub_field('block_text_media_media_video_loop');
     $video_control          = get_sub_field('block_text_media_media_video_control');
-    $text_media_image       = get_sub_field('block_text_media_media_image');
-    $text_media_image_small = get_sub_field('block_text_media_media_image_small');
+    $text_media_gallery     = get_sub_field('block_text_media_media_gallery');
+    $count                  = count($text_media_gallery);
 
-    $video_cover    = $text_media_image;
+    if(!empty($text_media_gallery)) {
+        $video_cover = $text_media_gallery[0];
+    } else {
+        $video_cover = '';
+    }
 
     if(!empty($text_media_title) || !empty($text_media_content)) {
         $tag = 'section';
@@ -42,20 +46,33 @@
 
 <<?php echo $tag; ?> class="text_media_section p-<?php echo $text_media_padding; ?> text_media_section_<?php echo $text_media_position; ?>">
     <div class="<?php echo $text_media_img_full ? '' : 'container'; ?> text_media_position text_media_position_<?php echo $text_media_position; ?> text_media_text_width_<?php echo $text_media_content_width; ?>">
-        <?php if(!empty($video_embed) or !empty($video_upload) or !empty($text_media_image['url'])) : ?>
+        <?php if(!empty($video_embed) or !empty($video_upload) or !empty($text_media_gallery)) : ?>
         <div class="text_media_wrapper text_media_media_wrapper <?php echo !empty($text_media_animation_content)? 'animatable-js animatable-' . $text_media_animation_content : '' ?> <?php echo $text_media_img_rotate? 'text_media_wrapper_rotate' : '' ; ?>">
             <?php if(!$media) : ?>
-                <?php if(!empty($text_media_image)) : ?>
-                    <div class="img_wrapper_crop_form">
-                        <img loading="lazy" class="text_media_img" src="<?php echo $text_media_image['url']; ?>" alt="<?php echo $text_media_image ['alt']; ?>" >
+                <?php if ($count > 2) : ?>
+                    <div class="swiper text_media_swiper-js">
+                        <div class="swiper-wrapper text_media_swiper-wrapper">
+                            <?php foreach ($text_media_gallery as $image): ?>
+                                <div class="swiper-slide img_wrapper_crop_form">
+                                    <img loading="lazy"
+                                        src="<?php echo esc_url($image['url']); ?>"
+                                        alt="<?php echo esc_attr($image['alt']); ?>"
+                                        class="text_media_img">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-
-                    <?php if(!empty($text_media_image_small)) : ?>
-                    <div class="img_wrapper_crop_form <?php echo $text_media_image_small? 'img_wrapper_crop_form_border' : ''; ?>">
-                        <img loading="lazy" class="text_media_img text_media_img_small" src="<?php echo $text_media_image_small['url']; ?>" alt="<?php echo $text_media_image_small ['alt']; ?>" >
-                    </div>
-                    <?php endif; ?>
-
+                <?php else : ?>
+                    <?php foreach($text_media_gallery as $index => $gallery) : ?>
+                        <?php if(!empty($index === 0) or !empty($index === 1)) : ?>
+                            <div class="img_wrapper_crop_form <?php echo $index === 1? 'img_wrapper_crop_form_border' : ''; ?>">
+                                <img loading="lazy" class="text_media_img <?php echo $index === 1? 'text_media_img_small': ''; ?>" src="<?php echo $gallery['url']; ?>" alt="<?php echo $gallery['alt']; ?>" >
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             <?php else :
                 include get_template_directory() . '/parts/components/video.php';

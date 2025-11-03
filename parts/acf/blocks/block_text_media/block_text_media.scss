@@ -67,9 +67,11 @@
         &_media_wrapper {
             position: relative;
         }
-    }
 
-    .text_media {
+        &_swiper-wrapper {
+            align-items: center;
+        }
+
         &_img {
             height: 100%;
             width: 100%;

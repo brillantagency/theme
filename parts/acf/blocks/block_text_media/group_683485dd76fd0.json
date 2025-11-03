@@ -169,11 +169,11 @@
             "ui": 1
         },
         {
-            "key": "field_6908a62af3fd7",
-            "label": "Gallery",
-            "name": "media_gallery",
+            "key": "field_683486ba44459",
+            "label": "Image",
+            "name": "media_image",
             "aria-label": "",
-            "type": "gallery",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -186,14 +186,12 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "42",
                 "class": "",
                 "id": ""
             },
             "return_format": "array",
             "library": "all",
-            "min": "",
-            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -201,7 +199,45 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "insert": "append",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_68f0b42ba83c7",
+            "label": "Small image",
+            "name": "media_image_small",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_682ddd2baefd7",
+                        "operator": "!=",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_683486ba44459",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "42",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
             "preview_size": "thumbnail"
         }
     ],
@@ -224,5 +260,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1762175821
+    "modified": 1760605365
 }
