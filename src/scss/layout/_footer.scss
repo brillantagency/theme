@@ -215,21 +215,6 @@
         }
     }
 
-    &_brand {
-        width: 100%;
-        height: auto;
-        margin-bottom: -5px;
-        opacity: 0.4;
-
-        &_belgium path {
-            fill: variables.$yellow;
-        }
-
-        &_lux path {
-            fill: variables.$darkblue;
-        }
-    }
-
     &_designed {
         display: flex;
         justify-content: center;

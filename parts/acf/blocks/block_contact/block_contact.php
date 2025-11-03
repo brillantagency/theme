@@ -6,7 +6,6 @@
     $contact_title             = get_sub_field('contact_title');
     $contact_subtitle          = get_sub_field('contact_subtitle');
     $contact_text              = get_sub_field('contact_text');
-    $contact_image             = get_sub_field('contact_image');
 
 
     // Styles
@@ -19,26 +18,22 @@
 <section class="block_contact p-<?php echo $contact_padding; ?>">
         <div class="container">
             <?php if(!empty($contact_subtitle)) : ?>
-            <p class="subtitle"><?php echo $contact_subtitle; ?></p>
+            <p class="contact_subtitle subtitle"><?php echo $contact_subtitle; ?></p>
             <?php endif; ?>
 
             <?php if(!empty($contact_title)) : ?>
-            <div>           
+            <h2 class="contact_title title">           
                 <?php echo $contact_title; ?>
-            </div>
+            </h2>
             <?php endif; ?>
 
             <?php if(!empty($contact_text)) : ?>
-            <div><?php echo $contact_text; ?></div>
+            <div class="contact_text"><?php echo $contact_text; ?></div>
             <?php endif; ?>
 
             <?php if(!empty($contact_form)) : ?>
                 <div class="contact_form_wrapper">
                     <?php echo do_shortcode($contact_form); ?>
-
-                    <?php if(!empty($contact_image)) : ?>
-                        <img loading="lazy" class="contact_img" src="<?php echo $contact_image['url']; ?>" alt="<?php echo $contact_image ['alt']; ?>" >
-                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>

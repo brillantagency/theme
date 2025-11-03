@@ -69,7 +69,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -90,7 +90,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -111,7 +111,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -361,6 +361,36 @@
             "ui_on_text": "Yes",
             "ui_off_text": "No",
             "ui": 1
+        },
+        {
+            "key": "field_6908689d13280",
+            "label": "Animation content",
+            "name": "text_media_animation_content",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No animation",
+                "left-opacity": "Left opacity",
+                "perspective": "Perspective"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -382,5 +412,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761941308
+    "modified": 1762160378
 }
