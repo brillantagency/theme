@@ -31,7 +31,7 @@
         <?php endif; ?>
 
         <?php if (!empty($brands_title)) : ?>
-            <div class="brands_title"><?php echo $brands_title; ?></div>
+            <h2 class="brands_title title"><?php echo $brands_title; ?></h2>
         <?php endif; ?>
     </div>
     <?php endif; ?>

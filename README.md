@@ -13,4 +13,7 @@ Add file .json *group_ in folder /acf-json
 2. Synchronyze acf
 3. Clone block on acf builder
 
+## Form
 Import file JSON gravityforms-export- in plugin Gravity Form in admin
+
+## Acf Block clone Github and follow the instructions in README
