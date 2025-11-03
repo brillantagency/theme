@@ -11,12 +11,13 @@
     // Styles
     $contact_padding           = get_sub_field('contact_padding');
     $contact_actif             = get_sub_field('contact_actif');
+    $contact_animation_content = get_sub_field('contact_animation_content');
 
     if($contact_actif) :
 ?>
 
 <section class="block_contact p-<?php echo $contact_padding; ?>">
-        <div class="container">
+        <div class="container <?php echo !empty($contact_animation_content)? 'animatable-js animatable-' . $contact_animation_content : '' ?>">
             <?php if(!empty($contact_subtitle)) : ?>
             <p class="contact_subtitle subtitle"><?php echo $contact_subtitle; ?></p>
             <?php endif; ?>

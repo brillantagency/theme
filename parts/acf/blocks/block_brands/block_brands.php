@@ -8,8 +8,9 @@
     $brands_repeater = get_sub_field('brands_repeater');
 
     // Styles
-    $brands_actif    = get_sub_field('brands_actif');
-    $brands_padding  = get_sub_field('brands_padding');
+    $brands_actif             = get_sub_field('brands_actif');
+    $brands_padding           = get_sub_field('brands_padding');
+    $brands_animation_content = get_sub_field('brands_animation_content');
 
     if(empty($brands_repeater) or $brands_repeater == NULL) {
         $brands_repeater = get_field('brands_repeater', 'option');
@@ -25,7 +26,7 @@
 ?>
 <<?php echo $tag; ?> class="block_brands p-<?php echo $brands_padding; ?>">
     <?php if (!empty($brands_subtitle) or !empty($brands_title)) : ?>
-    <div class="container">
+    <div class="container <?php echo !empty($brands_animation_content)? 'animatable-js animatable-' . $brands_animation_content : '' ?>">
         <?php if (!empty($brands_subtitle)) : ?>
             <p class="brands_subtitle subtitle"><?php echo $brands_subtitle; ?></p>
         <?php endif; ?>
