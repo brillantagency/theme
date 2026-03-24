@@ -1,0 +1,112 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.listing_section {
+    select {
+        width: 100%;
+    }
+
+    .listing {
+        thead {
+            display: none;
+
+            @include tablet {
+                display: table-header-group;
+            }
+        }
+
+        &_title {
+            margin-bottom: 20px;
+
+            @include tablet {
+                margin-bottom: 50px;
+            }
+        }
+
+        &_img_wrapper {
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 1px solid variables.$grey;
+            padding: 5px;;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &_table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+
+            td {
+                display: block;
+            }
+
+            th, 
+            td {
+                border-bottom: 1px solid #ccc;
+                text-align: left;
+                padding: 15px 10px;
+
+                @include tablet {
+                    display: table-cell;
+                    align-items: center;
+                    width: auto;
+                    padding: 25px 10px;
+                }
+            }
+        }
+
+        &_company_row {
+            display: none;
+
+            &.active {
+                display: table-row;
+            }
+
+            @include tablet {
+                display: table-row;
+            }
+
+            &_title {
+                display: flex!important;
+                align-items: center;
+                gap: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+
+                @include tablet {
+                    flex-direction: row;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: variables.$dark;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: variables.$red;
+                    transition: color 0.3s ease;
+                }
+            }
+        } 
+
+        &_select_form {
+            display: block;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 100px;
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+} 

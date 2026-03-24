@@ -6,6 +6,11 @@ gulp
 
 
 # Theme
+## DB
+Export db in Drive -> folder "Dev - Theme" -> .file.wpress
+Import db with "All-in-One Wp Migration"
+Plugins / Page / media
+
 ## General
 Add file png *block_ in folder /acf-previews
 Add file .json *group_ in folder /acf-json
@@ -15,10 +20,5 @@ Add file .json *group_ in folder /acf-json
 
 ## Form
 Import file JSON gravityforms-export- in plugin Gravity Form in admin
-
-## DB
-Export db in Drive -> folder "Dev - Theme" -> .file.wpress
-Import db with "All-in-One Wp Migration"
-Plugins / Page / media
 
 ## Acf Block clone Github and follow the instructions in README

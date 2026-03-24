@@ -1,0 +1,128 @@
+@use "../../../../src/scss/base/variables" as variables;
+@use "../../../../src/scss/base/mixins" as *;
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .swiper {
+        &-pagination {
+            display: none;
+        }
+
+        &-button {
+            &-prev,
+            &-next {
+                display: none;
+            }
+        }
+    }
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &_txt{
+        max-width: 1100px;
+        gap: 40px;
+
+        @include tablet {
+            flex: 1;
+        }
+    }
+
+    &_title {
+        padding-bottom: 20px;
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    &_swiper {
+        width: 100%;
+        
+        @include tablet {
+            flex: 3;
+        }
+    }
+
+    &_slide {
+        &_bull {
+            border: 1px solid variables.$grey;
+            border-radius: 5px;
+            background-color: variables.$lightgrey;
+            position: relative;
+            padding: 35px 20px;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                transform: rotate(180deg);
+            }
+
+            &::before {
+                left: 30px;
+                width: 30px;
+                height: 15px;
+                bottom: -15px;
+                background: variables.$lightgrey;
+                z-index: 1;
+            }
+
+            &::after {
+                left: 29px;
+                width: 32px;
+                bottom: -16px;
+                height: 16px;
+                background: variables.$grey;
+                z-index: 0;
+            }
+        }
+
+        &_author {
+            margin-top: 20px;
+
+            &_excerpt {
+                color: variables.$grey;
+            }
+
+            &_img {
+                width: 46px;
+                height: 46px;
+                border-radius: 50rem;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            &_note {
+                color: variables.$yellow;
+                display: block;
+                font-size: 17px;
+            }
+        }
+
+        &_author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            &_name {
+                margin-bottom: 0;
+                font-size: initial;
+                font-weight: 700;
+            }
+
+            &_date {
+                margin-top: 0;
+            }
+        }
+    }
+}
