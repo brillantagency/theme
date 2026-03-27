@@ -1,13 +1,13 @@
 {
     "key": "group_682de567bf613",
-    "title": "Banner",
+    "title": "Block - Banner",
     "fields": [
         {
-            "key": "field_682f425688f40",
-            "label": "Content",
-            "name": "",
+            "key": "field_692608b475d4d",
+            "label": "Media",
+            "name": "banner",
             "aria-label": "",
-            "type": "tab",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,9 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
+            "clone": [
+                "group_683485dd76fd0"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
             "key": "field_682de567c3cbd",
@@ -84,59 +88,22 @@
             "delay": 0
         },
         {
-            "key": "field_68ee597111ff4",
-            "label": "Button",
-            "name": "banner_button",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_682f425f88f41",
-            "label": "Style",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_682f426688f42",
-            "label": "Padding",
-            "name": "banner_padding",
+            "key": "field_693bf62b59bcc",
+            "label": "Background color",
+            "name": "banner_bg_color",
             "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "top": "Top",
-                "bottom": "Bottom",
-                "top-bottom": "Both",
-                "none": "None"
+                "darkred": "Darkred",
+                "darkgreen": "Darkgreen"
             },
             "default_value": false,
             "return_format": "value",
@@ -150,33 +117,75 @@
             "save_options": 0
         },
         {
-            "key": "field_68f0ba93c6542",
-            "label": "Button color",
-            "name": "banner_button_color",
+            "key": "field_693ad008eb747",
+            "label": "Searchbar \/ Button",
+            "name": "banner_search_bool",
             "aria-label": "",
-            "type": "select",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "primary": "Dark",
-                "secondary": "Orange"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
+            "message": "",
+            "default_value": 0,
             "allow_in_bindings": 0,
-            "ui": 1,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
+            "ui_on_text": "Searchbar",
+            "ui_off_text": "Button",
+            "ui": 1
+        },
+        {
+            "key": "field_69400c153091b",
+            "label": "Buttons",
+            "name": "banner_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_693ad008eb747",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68ee597111ff4",
+                    "label": "Button",
+                    "name": "banner_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_69400c153091b"
+                }
+            ]
         }
     ],
     "location": [
@@ -184,35 +193,40 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "article"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "promotion"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761941324
+    "modified": 1774615374
 }
