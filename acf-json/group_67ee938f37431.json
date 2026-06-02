@@ -112,6 +112,166 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69c2cced3caff": {
+                    "key": "layout_69c2cced3caff",
+                    "name": "block_lastpost",
+                    "label": "Lastpost",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69c2cced3cb01",
+                            "label": "Lastpost",
+                            "name": "block_lastpost",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6929e11631492"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_69c2cd3181ee4": {
+                    "key": "layout_69c2cd3181ee4",
+                    "name": "block_listing",
+                    "label": "Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69c2cd3181ee6",
+                            "label": "Listing",
+                            "name": "block_listing",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_693ad22dad9d4"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_69c2cd5981ee7": {
+                    "key": "layout_69c2cd5981ee7",
+                    "name": "block_teaser",
+                    "label": "Teaser",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69c2cd5981ee9",
+                            "label": "Teaser",
+                            "name": "block_teaser",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_69308024a2d30"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a19913f79227": {
+                    "key": "layout_6a19913f79227",
+                    "name": "block_testimonials",
+                    "label": "Testimonials",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a19913f79229",
+                            "label": "Testimonials",
+                            "name": "block_testimonials",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6929e15041ed6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a1991aa8a036": {
+                    "key": "layout_6a1991aa8a036",
+                    "name": "block_acordeons",
+                    "label": "Accordeons",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a1991aa8a038",
+                            "label": "Accordeons",
+                            "name": "block_accordeons",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a0c6636cc7f5"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -147,5 +307,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761941145
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1780061084
 }

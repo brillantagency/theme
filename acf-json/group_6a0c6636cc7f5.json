@@ -1,9 +1,9 @@
 {
-    "key": "group_68f737982caaa",
-    "title": "Block - Brands",
+    "key": "group_6a0c6636cc7f5",
+    "title": "Block - Accordeons",
     "fields": [
         {
-            "key": "field_68f738031c459",
+            "key": "field_6a0c663782bc8",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,11 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_68f7395244f73",
-            "label": "Subtitle",
-            "name": "brands_subtitle",
+            "key": "field_6a0c664582bc9",
+            "label": "Content general",
+            "name": "accordeons",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,38 +34,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "group_6929df6be404f"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
-            "key": "field_68f737981c454",
-            "label": "Title H2",
-            "name": "brands_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_68f737cf1c456",
-            "label": "Brands",
-            "name": "brands_repeater",
+            "key": "field_6a0c668082bcc",
+            "label": "Accordeons",
+            "name": "accordeons_repeater",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -85,55 +65,54 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_68f737dd1c457",
-                    "label": "Image",
-                    "name": "image",
+                    "key": "field_6a0c669582bcd",
+                    "label": "Title",
+                    "name": "title",
                     "aria-label": "",
-                    "type": "image",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
+                    "default_value": "",
+                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "preview_size": "thumbnail",
-                    "parent_repeater": "field_68f737cf1c456"
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6a0c668082bcc"
                 },
                 {
-                    "key": "field_68f737eb1c458",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_6a0c669d82bce",
+                    "label": "Text",
+                    "name": "text",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "default_value": "",
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_68f737cf1c456"
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_6a0c668082bcc"
                 }
             ]
         },
         {
-            "key": "field_68f738131c45a",
-            "label": "Style",
+            "key": "field_6a0c665f82bca",
+            "label": "Styles",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -150,30 +129,31 @@
             "selected": 0
         },
         {
-            "key": "field_68f738331c45c",
-            "label": "Actif ?",
-            "name": "brands_actif",
+            "key": "field_6a0c666982bcb",
+            "label": "Styles general",
+            "name": "accordeons",
             "aria-label": "",
-            "type": "true_false",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "allow_in_bindings": 0,
-            "ui_on_text": "Yes",
-            "ui_off_text": "No",
-            "ui": 1
+            "clone": [
+                "group_6929dbbe2d517"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
-            "key": "field_68f738191c45b",
-            "label": "Padding",
-            "name": "brands_padding",
+            "key": "field_6a0c762a7afb6",
+            "label": "Position",
+            "name": "accordeons_position",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -185,26 +165,24 @@
                 "id": ""
             },
             "choices": {
-                "top": "Top",
-                "bottom": "Bottom",
-                "top-bottom": "Both",
-                "none": "None"
+                "row": "Row",
+                "column": "Column"
             },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
-            "ui": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
             "save_options": 0
         },
         {
-            "key": "field_6908917e321b5",
-            "label": "Animation content",
-            "name": "brands_animation_content",
+            "key": "field_6a0c7d09f5891",
+            "label": "Text align",
+            "name": "accordeons_text_align",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -216,16 +194,16 @@
                 "id": ""
             },
             "choices": {
-                "none": "No animation",
-                "left-opacity": "Left opacity",
-                "perspective": "Perspective"
+                "center": "Center",
+                "left": "Left",
+                "right": "Right"
             },
-            "default_value": "none",
+            "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
-            "ui": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
@@ -253,5 +231,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780060270
+    "modified": 1780060575
 }

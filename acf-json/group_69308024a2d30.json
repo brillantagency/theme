@@ -1,9 +1,9 @@
 {
-    "key": "group_67ee8d254838c",
-    "title": "Block - Contact",
+    "key": "group_69308024a2d30",
+    "title": "Block - Teaser",
     "fields": [
         {
-            "key": "field_67ee8d26f5321",
+            "key": "field_693080240bc47",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,11 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_67ee8d6df5323",
-            "label": "Form",
-            "name": "contact_form",
+            "key": "field_693150a4bb006",
+            "label": "",
+            "name": "teaser",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,17 +34,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "group_683485dd76fd0"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
-            "key": "field_6a0d8a81d2133",
-            "label": "Content general",
-            "name": "contact",
+            "key": "field_693081320bc4a",
+            "label": "",
+            "name": "teaser",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -64,8 +65,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_67ee8da3f5325",
-            "label": "Style",
+            "key": "field_6930810c0bc48",
+            "label": "Styles",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -82,9 +83,9 @@
             "selected": 0
         },
         {
-            "key": "field_6a0d8a61d2132",
-            "label": "Styles general",
-            "name": "contact",
+            "key": "field_693081120bc49",
+            "label": "",
+            "name": "teaser",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -104,16 +105,16 @@
             "prefix_name": 1
         },
         {
-            "key": "field_69089210f6ca2",
+            "key": "field_693081650bc4c",
             "label": "Animation content",
-            "name": "contact_animation_content",
+            "name": "text_media_animation_content",
             "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -126,7 +127,37 @@
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
-            "allow_in_bindings": 1,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_693081460bc4b",
+            "label": "Background color text",
+            "name": "teaser_bg_color_text",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "red": "Red",
+                "dark": "Dark"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": "",
@@ -155,5 +186,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780061051
+    "modified": 1780060305
 }

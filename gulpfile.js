@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const esbuild = require('gulp-esbuild'); // JS → JS build and minifié
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
@@ -30,15 +31,28 @@ gulp.task('scss-blocks', function () {
     }));
 });
 
-// JS → JS minifié globaux
-gulp.task('js-global', function () {
+// JS → JS minifié (only minify) globaux
+/*gulp.task('js-global', function () {
   return gulp.src('src/js/*.js')
     .pipe(sourcemaps.init())
     .pipe(terser())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/js'));
+});*/
+
+// JS → JS build and minifié
+gulp.task('js-global', function () {
+  return gulp.src('src/js/app.js')
+    .pipe(esbuild({
+      bundle: true,
+      minify: true,
+      sourcemap: true,
+      outfile: 'app.min.js'
+    }))
+    .pipe(gulp.dest('dist/js'));
 });
+
 
 // JS → JS minifié par blocs
 gulp.task('js-blocks', function () {
