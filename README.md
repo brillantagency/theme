@@ -22,3 +22,4 @@ Import db with "All-in-One Wp Migration"
 Plugins / Page / media
 
 ## Acf Block clone Github and follow the instructions in README
+# theme-child
